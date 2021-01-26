@@ -10,3 +10,6 @@
 
 # c++ out
 *.out
+
+# markdown html
+*.html
