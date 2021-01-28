@@ -12,6 +12,13 @@ __C++ compiler__
 On Linux: g++
 On Windows: cl
 
+__end of file__  
+Window: Ctrl+Z
+Linux/Mac OS X: Ctrl+D
+
+__file redirection__  
+$exe <infile> outfile
+
 ## wait for solve
 
 - [ ] why #include must be outside of a function? what matter with where #include is?

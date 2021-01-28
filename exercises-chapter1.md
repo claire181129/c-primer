@@ -5,7 +5,7 @@
 - [ ] __E1.11__ How to know if a is bigger than b without if statement?
 - [ ] __E1.14__ my anwser not good enough
 - [ ] __E1.15__ what error compiler can detect? name more type or cases of type error, declaration error.
-
+- [ ] How std::cin return a status? What's data type is this status? Why wrong data type will cause error status?
 ## Exercise
 
 __E1.1__  
@@ -331,4 +331,134 @@ In file included from main.cpp:1:
 /usr/include/c++/9/iostream:61:18: note: ‘std::cout’ declared here
    61 |   extern ostream cout;  /// Linked to standard output
 */
+```
+__E1.16__  
+```
+#include <iostream>
+int main(){
+    int sum = 0, value = 0;
+    while(std::cin >> value)
+    {
+        std::cout<<value<<" ";
+        sum+=value;
+    }
+    std::cout<<std::endl;
+    std::cout<<"sum:"<<sum<<std::endl;
+    return 0;
+}
+```
+__E1.17__  
+nothing unsual happen.  
+keep output 1.
+(I don't get this question...)
+__E1.18__  
+same question with E1.17, why ask?
+__E1.19__  
+```
+#include <iostream>
+int main(){
+    int a = 0, b = 0;
+    std::cout<<"Please inpiut two number(a<b):";
+    std::cin>>a >>b;
+    if(a>=b)
+        std::cout<<" make sure first number smaller then second number"<<std::endl;
+    else
+    {
+        for(int val = a;val<=b;val++)
+        {
+            std::cout<<val<<" ";
+        }
+        std::cout<<std::endl;
+    }
+    return 0;
+}
+```
+__E1.20__  
+```
+#include <iostream>
+#include "Sales_item.h"
+
+int main(){
+    Sales_item book;
+    while(std::cin>>book)
+    {
+        std::cout<<book<<std::endl;
+    }
+    return 0;
+}
+```
+__E1.21__  
+```
+#include <iostream>
+#include "Sales_item.h"
+
+int main(){
+    Sales_item item1, item2;
+    std::cin>> item1>> item2;
+    std::cout<<item1+item2<<std::endl;
+    return 0;
+}
+```
+__E1.22__  
+```
+#include <iostream>
+#include "Sales_item.h"
+
+int main(){
+    Sales_item sum, item;
+    while(std::cin>>item)
+        sum+=item;
+    std::cout<<"sum:"<<sum<<std::endl;
+    return 0;
+}
+```
+__E1.23__&__E1.24__  
+```
+#include <iostream>
+#include "Sales_item.h"
+
+int main(){
+    Sales_item curItem, item;
+    if(std::cin>>curItem)
+    {
+        int cnt=1;
+        while(std::cin>>item)
+        {
+            if(item.isbn() == curItem.isbn())
+                cnt++;
+            else
+            {
+                std::cout<<curItem<<"'s count: "<<cnt<<std::endl;
+                cnt=1;
+                curItem = item;
+            }
+        }
+        std::cout<<curItem<<"'s count: "<<cnt<<std::endl;
+    }
+    return 0;
+}
+```
+__E1.25__  
+```
+#include <iostream>
+#include "Sales_item.h"
+
+int main(){
+    Sales_item curItem, item;
+    if(std::cin>>curItem)
+    {
+        while(std::cin>>item)
+        {
+            if(item.isbn() == curItem.isbn())
+                curItem+=item;
+            else
+            {
+                std::cout<<curItem<<std::endl;
+                curItem = item;
+            }
+        }
+        std::cout<<curItem<<std::endl;
+    }
+    return 0;
+}
 ```

@@ -1,1 +1,21 @@
-#include <iostream>int main(){int v1 = 0, v2 = 0;std::cin >> v1 >> v2;std::cout<<v1+v2<<std::endl;return 0;}
+#include <iostream>
+#include "Sales_item.h"
+
+int main(){
+    Sales_item curItem, item;
+    if(std::cin>>curItem)
+    {
+        while(std::cin>>item)
+        {
+            if(item.isbn() == curItem.isbn())
+                curItem+=item;
+            else
+            {
+                std::cout<<curItem<<std::endl;
+                curItem = item;
+            }
+        }
+        std::cout<<curItem<<std::endl;
+    }
+    return 0;
+}
