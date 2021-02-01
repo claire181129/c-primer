@@ -6,7 +6,7 @@
 - [ ] __E1.14__ my anwser not good enough
 - [ ] __E1.15__ what error compiler can detect? name more type or cases of type error, declaration error.
 - [ ] How std::cin return a status? What's data type is this status? Why wrong data type will cause error status?
-## Exercise
+## Exercises
 
 __E1.1__  
 g++ documentation:  [Linux man page](https://linux.die.net/man/1/g++)
