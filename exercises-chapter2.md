@@ -4,6 +4,7 @@
 
 - [ ] why there isn't signed float/double, usigned float/double?
 - [ ] why char range is [-128,127], not [-127,127], or [-127,128]?
+- [ ] why std::cout<< u + i <<std::endl; turn signed to unsigned, not opposite. why int is converted to unsigned ? not opposite? does signed mix with unsigned , signed always turn into unsigned?
 
 ## Exercises
 
@@ -57,3 +58,21 @@ __E2.2__
 rate: double, must be float or double, and double more precise
 principle: double, must be float or double, and double more precise
 payment: double, must be float or double, and double more precise
+
+__E2.3__& __E2.4__  
+```
+32
+2^32 - 32 = 4294967264
+32
+-32
+0
+0
+```
+
+## Note
+
+__note 1__ page 37, that's not problem of for loop or while loop, for loop can also work.
+```
+for(unsigned u=0;u>0;--u)
+    std::cout<<u<<std::endl;
+```
